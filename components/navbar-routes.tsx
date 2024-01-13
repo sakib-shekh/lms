@@ -1,17 +1,18 @@
 "use client";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
+
 import { UserButton } from "@clerk/nextjs";
-import {LogOut } from "lucide-react";
-import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
+import { LogOut } from "lucide-react";
 import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
 
 export const NavbarRoutes = () => {
   const pathname = usePathname();
-  const router = useRouter();
 
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isPlayerPage = pathname?.includes("/chapter");
+
   return (
     <div className="flex gap-x-2 ml-auto">
       {isTeacherPage || isPlayerPage ? (
@@ -24,11 +25,13 @@ export const NavbarRoutes = () => {
       ) : (
         <Link href="/teacher/courses">
           <Button size="sm" variant="ghost">
-            Teacher Mode
+            Teacher mode
           </Button>
         </Link>
       )}
-      <UserButton afterSignOutUrl="/" />
+      <UserButton
+        afterSignOutUrl="/"
+      />
     </div>
-  );
-};
+  )
+}

@@ -1,9 +1,9 @@
-import React from 'react'
-
-export default function page() {
-  return (
-    <div >
-      Search
+const SearchPage = () => {
+  return ( 
+    <div>
+      This is a search page!
     </div>
-  )
+   );
 }
+ 
+export default SearchPage;

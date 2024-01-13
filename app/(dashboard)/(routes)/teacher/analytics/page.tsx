@@ -1,9 +1,9 @@
-import React from 'react'
-
-export default function page() {
-  return (
+const AnalyticsPage = () => {
+  return ( 
     <div>
-      Analytics
+      Analytics page
     </div>
-  )
+   );
 }
+ 
+export default AnalyticsPage;
